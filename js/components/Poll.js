@@ -1,14 +1,25 @@
 import html from '../html.js';
+import Cat from './Cat.js';
 
 const template = () => {
   return html`
-      <h2>This is a poll.</h2>
+        <div>
+            <h2>This is a poll.</h2>
+            <ul></ul>
+        </div>
   `;
 };
 
 export default class Poll {
   render() {
-      const dom = template();
-      return dom;
+        const dom = template();
+        this.ul = dom.querySelector('ul');
+
+        for(let i = 0; i < 3; i++) {
+            let li = new Cat();
+            this.ul.appendChild(li.render());
+        }
+
+        return dom;
   }
 };
