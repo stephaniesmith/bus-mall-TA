@@ -2,7 +2,7 @@ import html from '../html.js';
 
 const template = () => {
   return html`
-      <h2>This is a product.</h2>
+      <li>This is a cat.</li>
   `;
 };
 
