@@ -1,10 +1,10 @@
-import Template from '../Template.js';
+import html from '../html.js';
 
-const template = new Template(() => {
-    return `
+const template = () => {
+    return html`
         <h1>Hello World</h1>
     `;
-});
+};
 
 export default class App {
     render() {
