@@ -11,15 +11,23 @@ const template = () => {
 };
 
 export default class Poll {
-  render() {
+    constructor(props) {
+        this.cats = props.cats
+    }
+
+    render() {
         const dom = template();
         this.ul = dom.querySelector('ul');
 
-        for(let i = 0; i < 3; i++) {
-            let li = new Cat();
+        
+
+        for(let i = 0; i < this.cats.length; i++) {
+            let li = new Cat({
+                cat: this.cats[i]
+            });
             this.ul.appendChild(li.render());
         }
 
         return dom;
-  }
+    }
 };
