@@ -2,7 +2,11 @@ body {
     font-family: sans-serif;
 }
 
+ul {
+    list-style: none;
+}
+
 .cat {
     height: 200px;
     width: 200px;
-}
+} 
