@@ -62,5 +62,17 @@ const cats = [
 ];
 
 export default {
-    get: () => cats
-}
+    get: () => cats,
+    getRandomCats: () => {
+        const randomCats = [];
+
+        while(randomCats.length < 3) {
+            const index = Math.floor(Math.random() * (15))
+            const cat = cats[index];
+            if(randomCats.includes(cat)) continue;
+            randomCats.push(cat);
+        }
+
+        return randomCats;
+    }
+};
