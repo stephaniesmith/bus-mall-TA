@@ -45,7 +45,8 @@ export default class Poll {
 
             cats.forEach(cat => {
                 const results = new Results({
-                    name: cat.name,
+                    url: cat.url,
+                    views: cat.views,
                     votes: cat.votes
                 });
                 this.ul.appendChild(results.render());
