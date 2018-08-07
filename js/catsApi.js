@@ -1,63 +1,78 @@
 const cats = [
     {
-        name: 'Ball Cat',
-        url: '../../media/ball-cat.jpg'
+        name: 'ballCat',
+        url: '../../media/ball-cat.jpg',
+        votes: 0
     },
     {
-        name: 'Computer Cat',
-        url: '../../media/computer-cat.jpg'
+        name: 'computerCat',
+        url: '../../media/computer-cat.jpg',
+        votes: 0
     },
     {
-        name: 'Field Cat',
-        url: '../../media/field-cat.jpg'
+        name: 'fieldCat',
+        url: '../../media/field-cat.jpg',
+        votes: 0
     },
     {
-        name: 'Floppy Cat',
-        url: '../../media/floppy-cat.jpg'
+        name: 'floppyCat',
+        url: '../../media/floppy-cat.jpg',
+        votes: 0
     },
     {
-        name: 'Hands Up Cat',
-        url: '../../media/handsup-cat.jpg'
+        name: 'handsupCat',
+        url: '../../media/handsup-cat.jpg',
+        votes: 0
     },
     {
-        name: 'Head Stand Cat',
-        url: '../../media/headstand-cat.jpg'
+        name: 'headstandCat',
+        url: '../../media/headstand-cat.jpg',
+        votes: 0
     },
     {
-        name: 'Jumping Cat',
-        url: '../../media/jumping-cat.jpg'
+        name: 'jumpingCat',
+        url: '../../media/jumping-cat.jpg',
+        votes: 0
     },
     {
-        name: 'Living Room Cat',
-        url: '../../media/livingroom-cat.jpg'
+        name: 'livingroomCat',
+        url: '../../media/livingroom-cat.jpg',
+        votes: 0
     },
     {
-        name: 'Pants Cat',
-        url: '../../media/pants-cat.jpg'
+        name: 'pantsCat',
+        url: '../../media/pants-cat.jpg',
+        votes: 0
     },
     {
-        name: 'Pet Cat',
-        url: '../../media/pet-cat.jpg'
+        name: 'petCat',
+        url: '../../media/pet-cat.jpg',
+        votes: 0
     },
     {
-        name: 'Pirate Cat',
-        url: '../../media/pirate-cat.jpg'
+        name: 'pirateCat',
+        url: '../../media/pirate-cat.jpg',
+        votes: 0
     },
     {
-        name: 'Pocket Cat',
-        url: '../../media/pocket-cat.jpg'
+        name: 'pocketCat',
+        url: '../../media/pocket-cat.jpg',
+        votes: 0
     },
     {
-        name: 'Sad Cat',
-        url: '../../media/sad-cat.jpg'
+        name: 'sadCat',
+        url: '../../media/sad-cat.jpg',
+        votes: 0
     },
     {
-        name: 'Screaming Cat',
-        url: '../../media/screaming-cat.jpg'
+        name: 'screamingCat',
+        url: '../../media/screaming-cat.jpg',
+        votes: 0
     },
     {
-        name: 'Winking Cat',
-        url: '../../media/winking-cat.jpg'
+        name: 'winkingCat',
+        url: '../../media/winking-cat.jpg',
+        votes: 0
     }
 ];
 
@@ -67,12 +82,18 @@ export default {
         const randomCats = [];
 
         while(randomCats.length < 3) {
-            const index = Math.floor(Math.random() * (15))
+            const index = Math.floor(Math.random() * 15);
             const cat = cats[index];
             if(randomCats.includes(cat)) continue;
             randomCats.push(cat);
         }
 
         return randomCats;
+    },
+    addVote: (catName) => {
+        const selectedCat = cats.filter(cat => cat.name === catName);
+        const index = cats.indexOf(selectedCat[0]);
+        cats[index].votes ++;
+        console.log(cats);
     }
 };
