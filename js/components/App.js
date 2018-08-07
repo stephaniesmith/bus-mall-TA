@@ -5,7 +5,7 @@ import catApi from '../catsApi.js';
 const template = () => {
     return html`
         <div>
-            <h1>Hello World</h1>
+            <h1>Cute Cat Vote</h1>
         </div>
     `;
 };
@@ -18,10 +18,12 @@ export default class App {
         const cats = catApi.getRandomCats();
 
         const poll = new Poll({
-            cats: cats
+            cats: cats,
+            handleRounds: event => poll.tallyRounds(event)
         });
-
+        
         this.div.appendChild(poll.render());
+
         return dom;
     }
-};
+}
