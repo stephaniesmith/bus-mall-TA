@@ -2,42 +2,64 @@ import html from '../html.js';
 import Cat from './Cat.js';
 import catsApi from '../catsApi.js';
 
-const template = () => {
-  return html`
+const template = rounds => {
+    return html`
         <div>
-            <h2>This is a poll.</h2>
+            <h2>Click on your favorite cat to vote.</h2>
+            <h3>Total Rounds: <span>${rounds}</span></h3>
             <ul></ul>
         </div>
-  `;
+    `;
 };
 
 export default class Poll {
     constructor(props) {
         this.cats = props.cats,
+        this.handleRounds = props.handleRounds,
         this.rounds = 5;
     }
 
-    render() {
-        const dom = template();
-        this.ul = dom.querySelector('ul');
+    tallyRounds(event) {
+        event.preventDefault();
+        
+        catsApi.addVote(event.target.title);
+        
+        this.rounds --;
 
-        this.ul.addEventListener('click', event => {
-            this.rounds --;
-            console.log(this.rounds);
-            catsApi.getRandomCats();
-            if(!this.rounds) {
-                console.log('NO MORE ROUNDS!');
+        this.span.innerText = this.rounds;
 
-            }
-        })
+        while(this.ul.children.length) {
+            this.ul.lastChild.remove();
+        } 
 
-        for(let i = 0; i < this.cats.length; i++) {
+        if(this.rounds) { 
+            this.cats = catsApi.getRandomCats();
+            this.renderCats(this.cats);  
+        }
+        else {
+            this.rounds = 5;
+            this.ul.removeEventListener('click', this.handleRounds);
+        }
+    }
+
+    renderCats(cats) {
+        for(let i = 0; i < cats.length; i++) {
             let li = new Cat({
-                cat: this.cats[i]
+                cat: cats[i]
             });
             this.ul.appendChild(li.render());
         }
+    }
+
+    render() {
+        const dom = template(this.rounds);
+        this.ul = dom.querySelector('ul');
+        this.span = dom.querySelector('span');
+
+        this.renderCats(this.cats);
+
+        this.ul.addEventListener('click', this.handleRounds);
 
         return dom;
     }
-};
+}
