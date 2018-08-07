@@ -41,8 +41,15 @@ export default class Poll {
             this.rounds = 5;
             this.ul.removeEventListener('click', this.handleRounds);
 
-            const results = new Results();
-            this.ul.appendChild(results.render());
+            const cats = catsApi.get();
+
+            cats.forEach(cat => {
+                const results = new Results({
+                    name: cat.name,
+                    votes: cat.votes
+                });
+                this.ul.appendChild(results.render());
+            });
         }
     }
 
