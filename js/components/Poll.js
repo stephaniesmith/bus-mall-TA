@@ -1,6 +1,7 @@
 import html from '../html.js';
 import Cat from './Cat.js';
 import catsApi from '../catsApi.js';
+import Results from './Results.js';
 
 const template = rounds => {
     return html`
@@ -39,6 +40,9 @@ export default class Poll {
         else {
             this.rounds = 5;
             this.ul.removeEventListener('click', this.handleRounds);
+
+            const results = new Results();
+            this.ul.appendChild(results.render());
         }
     }
 
