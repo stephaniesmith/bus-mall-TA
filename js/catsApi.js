@@ -94,6 +94,5 @@ export default {
         const selectedCat = cats.filter(cat => cat.name === catName);
         const index = cats.indexOf(selectedCat[0]);
         cats[index].votes ++;
-        console.log(cats);
     }
 };
