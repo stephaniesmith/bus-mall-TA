@@ -7,11 +7,19 @@ ul {
 }
 
 .cat {
+    box-sizing: border-box;  
     height: 200px;
     width: 200px;
     margin: 20px 0px;
+    padding-top: 10px;
 } 
 
 .results {
     margin: 10px 0px;
+    color: white;
+}
+
+.results h2 {
+    margin-left: 20px;
+    filter: drop-shadow(0 0 0.25rem black);
 }
