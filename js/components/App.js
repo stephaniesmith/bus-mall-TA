@@ -6,7 +6,9 @@ import ResultsChart from './ResultsChart.js';
 
 const template = () => {
     return html`
-            <h1>Cute Cat Vote</h1>
+            <header>
+                <h1>Cute Cat Vote</h1>
+            </header>
             <main>
                 <section>
                     <div class="chart"></div>
@@ -23,8 +25,6 @@ export default class App {
     }
 
     renderResults(cats) {
-
-        this.rounds = 25;
 
         cats.forEach(cat => {
             const results = new Results({
