@@ -17,17 +17,15 @@ export default class Poll {
         this.handleRounds = props.handleRounds;
     }
 
-    tallyRounds() {   
+    newRound() {   
         this.span.innerText = this.rounds;
 
         while(this.ul.children.length) {
             this.ul.lastChild.remove();
-        } 
-
-        if(this.rounds) { 
-            this.cats = catsApi.getRandomCats();
-            this.renderCats(this.cats);  
         }
+        
+        this.cats = catsApi.getRandomCats();
+        this.renderCats(this.cats);  
     }
 
     renderCats(cats) {

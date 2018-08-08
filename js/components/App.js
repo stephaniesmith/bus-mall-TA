@@ -58,9 +58,10 @@ export default class App {
 
                 catsApi.addVote(cat);
 
-                poll.tallyRounds();
+                this.rounds
+                    ? poll.newRound() 
+                    : this.renderResults(catsApi.get());
 
-                if(!this.rounds) this.renderResults(catsApi.get());
             }
         });
         
