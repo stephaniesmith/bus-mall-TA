@@ -4,7 +4,7 @@ import catsApi from '../catsApi.js';
 import Results from './Results.js';
 import ResultsChart from './ResultsChart.js';
 
-const template = rounds => {
+const template = (rounds) => {
     return html`
         <h2>Click on your favorite cat to vote.</h2>
         <h3>Total Rounds: <span>${rounds}</span></h3>
@@ -15,17 +15,16 @@ const template = rounds => {
 
 export default class Poll {
     constructor(props) {
-        this.cats = props.cats,
-        this.handleRounds = props.handleRounds,
-        this.rounds = 25;
+        this.cats = props.cats;
+        this.rounds = props.rounds;
+        this.handleRounds = props.handleRounds;
     }
 
     tallyRounds(event) {
-        event.preventDefault();
         
         catsApi.addVote(event.target.title);
         
-        this.rounds --;
+        // this.rounds --;
 
         this.span.innerText = this.rounds;
 
@@ -72,9 +71,9 @@ export default class Poll {
     render() {
         const dom = template(this.rounds);
         this.div = dom.querySelector('div');
+        this.span = dom.querySelector('span');
         this.resultsDiv = dom.querySelector('div.results');
         this.ul = dom.querySelector('ul');
-        this.span = dom.querySelector('span');
 
         this.renderCats(this.cats);
 

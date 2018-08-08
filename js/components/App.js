@@ -11,15 +11,29 @@ const template = () => {
 };
 
 export default class App {
+    constructor() {
+        this.cats = catApi.getRandomCats();
+        this.rounds = 25;
+    }
+
     render() {
-        const dom = template();
+        const dom = template(this.rounds);
         this.div = dom.querySelector('div');
 
-        const cats = catApi.getRandomCats();
-
         const poll = new Poll({
-            cats: cats,
-            handleRounds: event => poll.tallyRounds(event)
+            cats: this.cats,
+            rounds: this.rounds,
+            // handleRounds: event => poll.tallyRounds(event)
+            handleRounds: event => {
+                event.preventDefault();
+
+                poll.rounds --;
+                this. rounds --;
+
+                // this.span.innerText = this.rounds;
+
+                poll.tallyRounds(event);
+            }
         });
         
         this.div.appendChild(poll.render());
