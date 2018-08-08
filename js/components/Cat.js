@@ -16,7 +16,9 @@ export default class Cat {
         const dom = template(this.cat);
         this.div = dom.querySelector('div.cat');
 
-        this.div.addEventListener('click', this.handleRounds);
+        this.div.addEventListener('click', () => {
+            this.handleRounds(this.cat.name);
+        });
 
         return dom;
     }
