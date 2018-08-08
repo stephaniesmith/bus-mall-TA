@@ -23,7 +23,6 @@ export default class App {
         const poll = new Poll({
             cats: this.cats,
             rounds: this.rounds,
-            // handleRounds: event => poll.tallyRounds(event)
             handleRounds: event => {
                 event.preventDefault();
 

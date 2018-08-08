@@ -24,8 +24,6 @@ export default class Poll {
         
         catsApi.addVote(event.target.title);
         
-        // this.rounds --;
-
         this.span.innerText = this.rounds;
 
         while(this.ul.children.length) {
@@ -62,7 +60,8 @@ export default class Poll {
     renderCats(cats) {
         for(let i = 0; i < cats.length; i++) {
             let li = new Cat({
-                cat: cats[i]
+                cat: cats[i],
+                handleRounds: this.handleRounds
             });
             this.ul.appendChild(li.render());
         }
@@ -70,14 +69,11 @@ export default class Poll {
 
     render() {
         const dom = template(this.rounds);
-        this.div = dom.querySelector('div');
         this.span = dom.querySelector('span');
         this.resultsDiv = dom.querySelector('div.results');
         this.ul = dom.querySelector('ul');
 
         this.renderCats(this.cats);
-
-        this.ul.addEventListener('click', this.handleRounds);
 
         return dom;
     }
