@@ -1,13 +1,13 @@
 import html from '../html.js';
-import Poll from './Poll.js';
 import catsApi from '../catsApi.js';
+import Header from './Header.js'
+import Poll from './Poll.js';
 import Results from './Results.js';
 import ResultsChart from './ResultsChart.js';
 
 const template = () => {
     return html`
             <header>
-                <h1>Cute Cat Vote</h1>
             </header>
             <main>
                 <section>
@@ -44,7 +44,8 @@ export default class App {
 
     render() {
         const dom = template(this.rounds);
-        this.div = dom.querySelector('div');
+        this.header = dom.querySelector('header');
+        this.main = dom.querySelector('main');
         this.chartDiv = dom.querySelector('.chart');
         this.resultsUl = dom.querySelector('.results');
 
@@ -64,8 +65,11 @@ export default class App {
 
             }
         });
+
+        const header = new Header();
         
-        this.div.appendChild(poll.render());
+        this.header.appendChild(header.render());
+        this.main.appendChild(poll.render());
 
         return dom;
     }
