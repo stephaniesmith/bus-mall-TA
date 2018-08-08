@@ -104,7 +104,6 @@ export default {
         }
 
         randomCats.forEach(cat => cat.views ++);
-        console.log(cats);
 
         return randomCats;
     },
