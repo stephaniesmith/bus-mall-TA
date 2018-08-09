@@ -4,11 +4,9 @@ import catsApi from '../catsApi.js';
 
 const template = (rounds) => {
     return html`
-        <section>
             <h2>Click on your favorite cat to vote.</h2>
             <h3>Total Rounds: <span>${rounds}</span></h3>
             <ul></ul>
-        </section>
     `;
 };
 
@@ -19,12 +17,14 @@ export default class Poll {
         this.handleRounds = props.handleRounds;
     }
 
-    newRound() {   
-        this.span.innerText = this.rounds;
-
+    removeCats() {
         while(this.ul.children.length) {
             this.ul.lastChild.remove();
         }
+    }
+
+    newRound() {   
+        this.span.innerText = this.rounds;
 
         this.cats = catsApi.getRandomCats();
         this.renderCats(this.cats);  

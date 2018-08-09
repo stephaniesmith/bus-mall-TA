@@ -10,6 +10,8 @@ const template = () => {
             <header>
             </header>
             <main>
+                <section class="poll">
+                </section>
                 <section>
                     <div class="chart"></div>
                     <ul class="results"></ul>
@@ -21,7 +23,7 @@ const template = () => {
 export default class App {
     constructor() {
         this.cats = catsApi.getRandomCats();
-        this.rounds = 25;
+        this.rounds = 5;
     }
 
     renderResults(cats) {
@@ -46,6 +48,7 @@ export default class App {
         const dom = template(this.rounds);
         this.header = dom.querySelector('header');
         this.main = dom.querySelector('main');
+        this.pollSection = dom.querySelector('.poll');
         this.chartDiv = dom.querySelector('.chart');
         this.resultsUl = dom.querySelector('.results');
 
@@ -59,6 +62,8 @@ export default class App {
 
                 catsApi.addVote(cat);
 
+                poll.removeCats();
+
                 this.rounds
                     ? poll.newRound() 
                     : this.renderResults(catsApi.get());
@@ -69,7 +74,7 @@ export default class App {
         const header = new Header();
         
         this.header.appendChild(header.render());
-        this.main.appendChild(poll.render());
+        this.pollSection.appendChild(poll.render());
 
         return dom;
     }
