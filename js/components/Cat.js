@@ -9,10 +9,17 @@ const template = (cat) => {
 export default class Cat {
     constructor(props) {
         this.cat = props.cat;
+        this.handleRounds = props.handleRounds;
     }
 
     render() {
         const dom = template(this.cat);
+        this.div = dom.querySelector('div.cat');
+
+        this.div.addEventListener('click', () => {
+            this.handleRounds(this.cat.name);
+        });
+
         return dom;
     }
 }
