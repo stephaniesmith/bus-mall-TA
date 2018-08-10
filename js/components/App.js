@@ -56,7 +56,7 @@ export default class App {
             cats: this.cats,
             rounds: this.rounds,
             handleRounds: (cat) => {
-
+                console.log(this.rounds);
                 poll.rounds --;
                 this.rounds --;
 
