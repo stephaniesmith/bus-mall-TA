@@ -1,5 +1,4 @@
-import html from '/js/html.js';
-// import Chart from '../Chart.js';
+import html from '../js/html.js';
 
 let template = function() {
     return html`

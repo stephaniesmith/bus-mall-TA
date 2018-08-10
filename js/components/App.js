@@ -1,6 +1,6 @@
 import html from '../html.js';
 import catsApi from '../catsApi.js';
-import Header from './Header.js'
+import Header from './Header.js';
 import Poll from './Poll.js';
 import Results from './Results.js';
 import ResultsChart from './ResultsChart.js';
