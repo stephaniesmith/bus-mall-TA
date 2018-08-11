@@ -1,6 +1,6 @@
-import AppProducts from './components/AppProducts.js';
+import AppCats from './components/AppCats.js';
 
-const app = new AppProducts();
+const app = new AppCats();
 const root = document.getElementById('root');
 const dom = app.render();
 root.appendChild(dom);

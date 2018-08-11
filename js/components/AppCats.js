@@ -12,7 +12,7 @@ let template = function() {
    `;
 };
 
-export default class AppProducts {
+export default class AppCats {
     constructor() {
         this.cats = catsApi.get();
     }
