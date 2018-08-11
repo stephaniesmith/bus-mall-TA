@@ -1,17 +1,19 @@
 import html from '../html.js';
 import catsApi from '../catsApi.js';
 import Header from './Header.js';
-import Poll from './Poll.js';
+import Cats from './Cats.js';
 import Results from './Results.js';
 import ResultsChart from './ResultsChart.js';
 import Footer from './Footer.js';
 
-const template = () => {
+const template = (rounds) => {
     return html`
             <header>
             </header>
             <main>
                 <section class="poll">
+                    <h2>Click on your favorite cat to vote.</h2>
+                    <h3>Total Rounds: <span>${rounds}</span></h3>
                 </section>
                 <section>
                     <div class="chart"></div>
@@ -54,17 +56,17 @@ export default class App {
         this.pollSection = dom.querySelector('.poll');
         this.chartDiv = dom.querySelector('.chart');
         this.resultsUl = dom.querySelector('.results');
+        this.span = dom.querySelector('span');
 
         const header = new Header();
 
-        const poll = new Poll({
+        const poll = new Cats({
             cats: this.cats,
             rounds: this.rounds,
             handleRounds: (cat) => {
-                console.log(this.rounds);
-                poll.rounds --;
-                this.rounds --;
 
+                this.rounds --;
+                this.span.innerText = this.rounds;
                 catsApi.addVote(cat);
 
                 poll.removeCats();
