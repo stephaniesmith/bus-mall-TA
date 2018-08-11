@@ -3,7 +3,6 @@ import catsApi from '../services/catsApi.js';
 import Header from './Header.js';
 import Cats from './Cats.js';
 import Results from './Results.js';
-import ResultsChart from './ResultsChart.js';
 import Footer from './Footer.js';
 
 const template = (rounds) => {
@@ -16,7 +15,6 @@ const template = (rounds) => {
                     <h3>Total Rounds: <span>${rounds}</span></h3>
                 </section>
                 <section>
-                    <div class="chart"></div>
                     <ul class="results"></ul>
                 </section>
             </main>
@@ -40,12 +38,6 @@ export default class App {
             });
             this.resultsUl.appendChild(results.render());
         });
-
-        const resultsChart = new ResultsChart({
-            cats: cats
-        });
-
-        this.chartDiv.appendChild(resultsChart.render());
     }
 
     render() {
@@ -54,7 +46,6 @@ export default class App {
         this.main = dom.querySelector('main');
         this.footer = dom.querySelector('footer');
         this.pollSection = dom.querySelector('.poll');
-        this.chartDiv = dom.querySelector('.chart');
         this.resultsUl = dom.querySelector('.results');
         this.span = dom.querySelector('span');
 
