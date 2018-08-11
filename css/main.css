@@ -21,6 +21,15 @@ ul {
     list-style: none;
 }
 
+canvas {
+    position: relative;
+    width: 100%;
+}
+
+.chart-div {
+    width: 100vw;
+}
+
 .cat-list {
     margin: 0 auto;
     margin-top: 1.5em;
