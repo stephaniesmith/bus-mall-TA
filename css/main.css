@@ -8,8 +8,12 @@ body {
 
 }
 
+h1 {
+    font-size: 2em;
+}
+
 main {
-    background-color: blue;
+    background-color: white;
     min-height: 75vh;
 }
 
@@ -21,12 +25,12 @@ ul {
     box-sizing: border-box;  
     height: 200px;
     width: 200px;
-    margin: 20px 0px;
+    margin-top: 20px;
     padding-top: 10px;
 } 
 
 .results {
-    margin: 10px 0px;
+    margin-top: 10px;
     color: white;
 }
 
