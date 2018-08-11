@@ -2,18 +2,15 @@ import html from '../html.js';
 import Cat from './Cat.js';
 import catsApi from '../catsApi.js';
 
-const template = (rounds) => {
+const template = () => {
     return html`
-            <h2>Click on your favorite cat to vote.</h2>
-            <h3>Total Rounds: <span>${rounds}</span></h3>
             <ul></ul>
     `;
 };
 
-export default class Poll {
+export default class Cats {
     constructor(props) {
         this.cats = props.cats;
-        this.rounds = props.rounds;
         this.handleRounds = props.handleRounds;
     }
 
@@ -24,8 +21,6 @@ export default class Poll {
     }
 
     newRound() {   
-        this.span.innerText = this.rounds;
-
         this.cats = catsApi.getRandomCats();
         this.renderCats(this.cats);  
     }
@@ -42,7 +37,6 @@ export default class Poll {
 
     render() {
         const dom = template(this.rounds);
-        this.span = dom.querySelector('span');
         this.ul = dom.querySelector('ul');
 
         this.renderCats(this.cats);

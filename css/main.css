@@ -1,5 +1,20 @@
 body {
     font-family: sans-serif;
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+
+}
+
+h1 {
+    font-size: 2em;
+}
+
+main {
+    background-color: white;
+    min-height: 100vh;
 }
 
 ul {
@@ -10,12 +25,12 @@ ul {
     box-sizing: border-box;  
     height: 200px;
     width: 200px;
-    margin: 20px 0px;
+    margin-top: 20px;
     padding-top: 10px;
 } 
 
 .results {
-    margin: 10px 0px;
+    margin-top: 10px;
     color: white;
 }
 

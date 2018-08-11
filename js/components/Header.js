@@ -5,8 +5,8 @@ let template = function() {
         <h1>Cute Cat Vote</h1>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html">Products</a></li>
-            <li><a href="index.html">Results</a></li>
+            <li><a href="index-cats.html">Cats</a></li>
+            <li><a href="index-results.html">Results</a></li>
         <ul>
 
    `;
