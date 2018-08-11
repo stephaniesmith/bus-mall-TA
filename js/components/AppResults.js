@@ -1,5 +1,5 @@
 import html from '../html.js';
-import catsApi from '../catsApi.js';
+import catsApi from '../services/catsApi.js';
 import Header from './Header.js';
 import ResultsChart from './ResultsChart.js';
 import Footer from './Footer.js';

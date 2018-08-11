@@ -1,6 +1,6 @@
 import html from '../html.js';
 import Cat from './Cat.js';
-import catsApi from '../catsApi.js';
+import catsApi from '../services/catsApi.js';
 
 const template = () => {
     return html`
