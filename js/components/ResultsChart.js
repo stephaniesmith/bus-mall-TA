@@ -3,8 +3,8 @@ import html from '../html.js';
 let template = function() {
     return html`
         <h2>Results Chart</h2>
-        <div>
-            <canvas width="800"></canvas>
+        <div class="chart-div">
+            <canvas></canvas>
         </div>
     `;
 };
@@ -46,6 +46,9 @@ export default class ResultChart {
                         'rgba(255, 159, 64)'
                     ]
                 }]
+            },
+            options: {
+                
             }
         });
 
