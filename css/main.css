@@ -1,5 +1,16 @@
 body {
     font-family: sans-serif;
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+
+}
+
+main {
+    background-color: blue;
+    min-height: 75vh;
 }
 
 ul {
