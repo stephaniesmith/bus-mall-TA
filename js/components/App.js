@@ -4,6 +4,7 @@ import Header from './Header.js';
 import Poll from './Poll.js';
 import Results from './Results.js';
 import ResultsChart from './ResultsChart.js';
+import Footer from './Footer.js';
 
 const template = () => {
     return html`
@@ -17,6 +18,7 @@ const template = () => {
                     <ul class="results"></ul>
                 </section>
             </main>
+            <footer></footer>
     `;
 };
 
@@ -48,9 +50,12 @@ export default class App {
         const dom = template(this.rounds);
         this.header = dom.querySelector('header');
         this.main = dom.querySelector('main');
+        this.footer = dom.querySelector('footer');
         this.pollSection = dom.querySelector('.poll');
         this.chartDiv = dom.querySelector('.chart');
         this.resultsUl = dom.querySelector('.results');
+
+        const header = new Header();
 
         const poll = new Poll({
             cats: this.cats,
@@ -71,10 +76,11 @@ export default class App {
             }
         });
 
-        const header = new Header();
+        const footer = new Footer();
         
         this.header.appendChild(header.render());
         this.pollSection.appendChild(poll.render());
+        this.footer.appendChild(footer.render());
 
         return dom;
     }
