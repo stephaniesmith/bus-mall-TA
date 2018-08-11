@@ -14,7 +14,8 @@ h1 {
 
 main {
     background-color: white;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    padding: 1.5rem;
 }
 
 ul {
@@ -27,31 +28,33 @@ canvas {
 }
 
 .chart-div {
-    width: 100vw;
+    width: 100%;
 }
 
-.cat-list {
+.cat {
+    height: 200px;
+    padding: 1.5rem;
+} 
+
+.cat-list, .results {
     margin: 0 auto;
-    margin-top: 1.5em;
     max-width: 75vw;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 1em;
 }
 
-.cat {
-    height: 200px;
-    /* width: 200px; */
-    /* margin-top: 20px;
-    padding-top: 10px; */
-} 
+.cat-list {
+    margin-top: 1.5em;
+}
 
 .results {
-    margin-top: 10px;
     color: white;
 }
 
 .results h2 {
-    margin-left: 20px;
-    filter: drop-shadow(0 0 0.25rem black);
+    font-size: 1.75em;
+    margin-top: .25em;
+    font-weight: bold;
+    filter: drop-shadow(0 0 0.5rem black);
 }
