@@ -1,18 +1,22 @@
 import html from '../html.js';
+import catsApi from '../catsApi.js';
 import Header from './Header.js';
 import Footer from './Footer.js';
 
 let template = function() {
     return html`
         <header></header>
-        <main></main>
+        <main>
+            <div class="chart"></div>
+            <ul class="results"></ul>
+        </main>
         <footer></footer>
    `;
 };
 
 export default class AppResults {
     constructor() {
-       
+        this.cats = catsApi.get();
     }
 
     render() {
