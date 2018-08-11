@@ -7,7 +7,7 @@ let template = function() {
    `;
 };
 
-export default class AppResults {
+export default class AppProducts {
     constructor() {
        
     }
