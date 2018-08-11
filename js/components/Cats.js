@@ -4,7 +4,7 @@ import catsApi from '../catsApi.js';
 
 const template = () => {
     return html`
-            <ul></ul>
+            <ul class="cat-list"></ul>
     `;
 };
 
