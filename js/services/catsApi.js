@@ -1,3 +1,5 @@
+import data from './data.js';
+
 const cats = [
     {
         name: 'ballCat',
@@ -91,14 +93,16 @@ const cats = [
     }
 ];
 
+if(!data.cats) data.cats = cats;
+
 export default {
-    get: () => cats,
+    get: () => data.cats,
     getRandomCats: () => {
         const randomCats = [];
 
         while(randomCats.length < 3) {
             const index = Math.floor(Math.random() * 15);
-            const cat = cats[index];
+            const cat = data.cats[index];
             if(randomCats.includes(cat)) continue;
             randomCats.push(cat);
         }
@@ -108,8 +112,8 @@ export default {
         return randomCats;
     },
     addVote: (catName) => {
-        const selectedCat = cats.filter(cat => cat.name === catName);
-        const index = cats.indexOf(selectedCat[0]);
-        cats[index].votes ++;
+        const selectedCat = data.cats.filter(cat => cat.name === catName);
+        const index = data.cats.indexOf(selectedCat[0]);
+        data.cats[index].votes ++;
     }
 };
