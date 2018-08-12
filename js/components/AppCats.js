@@ -7,7 +7,9 @@ import Footer from './Footer.js';
 let template = function() {
     return html`
         <header></header>
-        <main></main>
+        <main>
+            <h2>Cute Cats</h2>
+        </main>
         <footer></footer>
    `;
 };
