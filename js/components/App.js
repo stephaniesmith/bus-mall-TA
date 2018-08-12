@@ -51,7 +51,6 @@ export default class App {
         this.resultsUl = dom.querySelector('.results');
         this.span = dom.querySelector('span');
         this.a = dom.querySelector('a');
-        console.log(this.a);
 
         const header = new Header();
 
