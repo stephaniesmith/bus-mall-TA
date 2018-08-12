@@ -28,6 +28,11 @@ ul {
     list-style: none;
 }
 
+a {
+    color: white;
+    text-decoration: none; 
+}
+
 .chart {
     transform: translateX(-50%);
     height: fit-content;
@@ -38,6 +43,7 @@ ul {
     color: black;
     transform: translateX(50%);
 }
+
 
 .chart-div {
     margin: 0 auto;
@@ -75,7 +81,27 @@ canvas {
 }
 
 .results h2 {
-    margin-top: .25em;
+    margin: .25em;
     font-weight: bold;
     filter: drop-shadow(0 0 0.5rem black);
 }
+
+.cat-info h2 {
+    margin: 1em 0 .75em 0;
+};
+
+.cat-info p {
+    color: black;
+}
+
+.hidden-cat {
+    display: none;
+}
+
+main .cat-poll a {
+    line-height: 50px;
+    padding: .5em;
+    background-color: rgb(94, 94, 94);
+    height: 2em;
+    border-radius: 7px;
+};

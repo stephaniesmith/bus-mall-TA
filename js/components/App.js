@@ -10,9 +10,10 @@ const template = (rounds) => {
             <header>
             </header>
             <main>
-                <section class="poll">
+                <section class="cat-poll">
                     <h2>Click to Vote</h2>
                     <h3>Total Rounds: <span>${rounds}</span></h3>
+                    <a class="hidden-cat" href="index-results.html">More results</a>
                 </section>
                 <section>
                     <ul class="results"></ul>
@@ -38,6 +39,7 @@ export default class App {
             });
             this.resultsUl.appendChild(results.render());
         });
+        this.a.classList.remove('hidden-cat');
     }
 
     render() {
@@ -45,9 +47,11 @@ export default class App {
         this.header = dom.querySelector('header');
         this.main = dom.querySelector('main');
         this.footer = dom.querySelector('footer');
-        this.pollSection = dom.querySelector('.poll');
+        this.pollSection = dom.querySelector('.cat-poll');
         this.resultsUl = dom.querySelector('.results');
         this.span = dom.querySelector('span');
+        this.a = dom.querySelector('a');
+        console.log(this.a);
 
         const header = new Header();
 
