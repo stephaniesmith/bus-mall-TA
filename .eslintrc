@@ -10,6 +10,9 @@
       "impliedStrict": true
     }
   },
+  "globals": {
+    "Chart": false
+  },
   "env": {
     "browser": true,
     "es6": true
