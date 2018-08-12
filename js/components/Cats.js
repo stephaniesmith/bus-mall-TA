@@ -20,9 +20,9 @@ export default class Cats {
         }
     }
 
-    newRound() {   
+    newRound() {
         this.cats = catsApi.getRandomCats();
-        this.renderCats(this.cats);  
+        this.renderCats(this.cats);
     }
 
     renderCats(cats) {

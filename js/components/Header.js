@@ -33,7 +33,7 @@ export default class Header {
                 ? classList.remove('show-nav')
                 : classList.add('show-nav');
         });
-        
+
         return dom;
     }
 }
