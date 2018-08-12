@@ -50,7 +50,7 @@ export default class AppResults {
         const footer = new Footer();
 
         this.header.appendChild(header.render());
-        this.chartDiv.appendChild(resultsChart.render());        
+        this.chartDiv.appendChild(resultsChart.render());
         this.footer.appendChild(footer.render());
 
         return dom;
