@@ -21,7 +21,19 @@ let template = function() {
 export default class Header {
 
     render() {
-        let dom = template();
+        const dom = template();
+        this.menu = dom.querySelector('.menu-button');
+        this.nav = dom.querySelector('nav');
+
+        this.menu.addEventListener('click', () => {
+
+            const { classList } = this.nav;
+
+            classList.contains('show-nav')
+                ? classList.remove('show-nav')
+                : classList.add('show-nav');
+        });
+        
         return dom;
     }
 }

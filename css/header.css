@@ -1,6 +1,5 @@
 header {
 	background-color: rgb(94, 94, 94);
-	height: 5rem;
 	padding: 0 2em;
 }
 
@@ -13,14 +12,27 @@ ul {
 	align-items: flex-end;
 }
 
+nav {
+    height: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    transition: height .75s cubic-bezier(0.77,0.2,0.05,1.0)
+}
+
 a {
 	color: white;
-	text-decoration: none; 
+    text-decoration: none; 
+}
+
+a:hover {
+    color: rgb(250, 208, 189);
 }
 
 .menu {
+	height: 5rem;
     display: flex;
-    height: 5rem;
     justify-content: space-between;
     align-items: center;
 }
@@ -40,5 +52,6 @@ a {
 }
 
 .show-nav {
-    height: 7rem;
+    margin-top: -.5em;
+    height: 6.5em;
 }
