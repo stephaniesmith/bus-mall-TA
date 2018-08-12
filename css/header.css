@@ -21,11 +21,6 @@ nav {
     transition: height .75s cubic-bezier(0.77,0.2,0.05,1.0)
 }
 
-a {
-	color: white;
-    text-decoration: none; 
-}
-
 a:hover {
     color: rgb(250, 208, 189);
 }
