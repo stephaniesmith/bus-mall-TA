@@ -1,10 +1,6 @@
 body {
     font-family: sans-serif;
     display: grid;
-    grid-template-areas: 
-        "header"
-        "main"
-        "footer";
 
 }
 
@@ -12,14 +8,42 @@ h1 {
     font-size: 2em;
 }
 
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    margin-top: .5em;
+    font-size: 1em;
+}
+
 main {
     background-color: white;
-    /* min-height: 100vh; */
     padding: 1.5rem;
+    width: 100vw;
+    overflow: hidden;
 }
 
 ul {
     list-style: none;
+}
+
+.chart {
+    transform: translateX(-50%);
+    height: fit-content;
+    grid-area: chart;
+}
+
+.chart h2 {
+    color: black;
+    transform: translateX(50%);
+}
+
+.chart-div {
+    margin: 0 auto;
+    width: 200%;
+    margin-bottom: 1.5rem;
+    margin-top: -1em;
 }
 
 canvas {
@@ -27,9 +51,6 @@ canvas {
     width: 100%;
 }
 
-.chart-div {
-    width: 100%;
-}
 
 .cat {
     height: 200px;
@@ -50,10 +71,10 @@ canvas {
 
 .results {
     color: white;
+    grid-area: results;
 }
 
 .results h2 {
-    font-size: 1.75em;
     margin-top: .25em;
     font-weight: bold;
     filter: drop-shadow(0 0 0.5rem black);
