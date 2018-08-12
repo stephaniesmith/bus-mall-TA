@@ -11,7 +11,7 @@ const template = (rounds) => {
             </header>
             <main>
                 <section class="poll">
-                    <h2>Click on your favorite cat to vote.</h2>
+                    <h2>Click to Vote</h2>
                     <h3>Total Rounds: <span>${rounds}</span></h3>
                 </section>
                 <section>
