@@ -2,7 +2,7 @@ import html from '../html.js';
 
 const template = (url, views, votes) => {
     return html`
-        <li class="results">
+        <li>
             <div class="cat" style="background: center / cover no-repeat url(${url})">
                 <h2>Views: ${views}</h2>
                 <h2>Votes: ${votes}</h2>
