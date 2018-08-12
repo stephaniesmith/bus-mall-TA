@@ -2,7 +2,7 @@ const storedCats = window.localStorage.getItem('cats');
 
 let cats;
 
-storedCats && storedCats !== 'undefined' 
+storedCats && storedCats !== 'undefined'
     ? cats = JSON.parse(storedCats)
     : cats = {};
 

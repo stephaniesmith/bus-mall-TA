@@ -67,14 +67,14 @@ export default class App {
                 poll.removeCats();
 
                 this.rounds
-                    ? poll.newRound() 
+                    ? poll.newRound()
                     : this.renderResults(catsApi.get());
 
             }
         });
 
         const footer = new Footer();
-        
+
         this.header.appendChild(header.render());
         this.pollSection.appendChild(poll.render());
         this.footer.appendChild(footer.render());
