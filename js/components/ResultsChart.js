@@ -48,7 +48,17 @@ export default class ResultChart {
                 }]
             },
             options: {
-                
+                responsive: true,
+                legend: {
+                    display: false,
+                },
+                title: {
+                    display: true
+                },
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                },
             }
         });
 
