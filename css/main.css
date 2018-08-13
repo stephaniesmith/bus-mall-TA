@@ -35,7 +35,6 @@ a {
 .chart {
     transform: translateX(-50%);
     height: fit-content;
-    grid-area: chart;
 }
 
 .chart h2 {
@@ -104,9 +103,3 @@ main .cat-poll a {
     height: 2em;
     border-radius: 7px;
 };
-
-@media (min-width: 900px) {
-    .cat-list, .results {
-        max-width: 700px;
-    }
-}

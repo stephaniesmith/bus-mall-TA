@@ -55,7 +55,6 @@ a:hover {
 @media (min-width: 600px) {
     header {
         height: 30vh;
-        background-image: url(/media/screaming-cat.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -90,5 +89,18 @@ a:hover {
     nav a {
         margin: 0 auto;
         color: rgb(94, 94, 94);
+    }
+
+    .chart {
+        transform: translateX(0%);
+    }
+    
+    .chart h2 {
+        transform: translateX(0%);
+    }
+
+    .chart-div {
+        width: 100%;
+        
     }
 }
