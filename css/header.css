@@ -1,6 +1,6 @@
 header {
 	background-color: rgb(94, 94, 94);
-	padding: 0 2em;
+    padding: 0 2em;
 }
 
 header h1 {
@@ -37,7 +37,8 @@ a:hover {
     width: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;}
+    justify-content: space-between;
+}
 
 .bar {
     background-color: white;
@@ -49,4 +50,45 @@ a:hover {
 .show-nav {
     margin-top: -.5em;
     height: 6.5em;
+}
+
+@media (min-width: 600px) {
+    header {
+        height: 30vh;
+        background-image: url(/media/screaming-cat.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+    }
+
+    header h1 {
+        margin: 0 auto;
+        margin-top: 1em;
+        font-size: 5em;
+        color: white;
+        font-weight: bold;
+    }
+
+    .menu-button {
+        height: 0;
+        width: 0;
+    }
+    
+    nav {
+        background-color: white;
+        height: 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative;
+        bottom: 0;
+        padding: 0 3em;
+    }
+
+    nav a {
+        margin: 0 auto;
+        color: rgb(94, 94, 94);
+    }
 }
